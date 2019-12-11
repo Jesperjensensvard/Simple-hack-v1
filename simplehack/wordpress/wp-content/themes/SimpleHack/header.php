@@ -20,24 +20,24 @@
 
 	<body >
 	<header class="header">
-		<div>
-			<div class="logo-wrapper">
-				<div>
-					<img src="<?php bloginfo('template_directory'); ?>/assets/img/demo/logo.png'?>" alt="">
+		<div class="g-header-special">
+			<div class="main-menu-wrapper">
+				<div class="logo-container">
+					<div class="logo-wrapper">
+						<img src="<?php bloginfo('template_directory'); ?>/assets/img/demo/logo.png'?>" alt="">
+					</div>
 				</div>
+				<nav>
+					<?php 
+						if (0 !== $locations1['main_menu']) {
+							wp_nav_menu( array(
+								'theme_location' => 'main_menu',
+								'depth' => 3
+							) );
+						} 
+					?>		
+				</nav>
 			</div>
-			<nav>
-		
-				<?php 
-					if (0 !== $locations1['main_menu']) {
-						wp_nav_menu( array(
-							'theme_location' => 'main_menu',
-							'depth' => 3
-						) );
-					} 
-				?>
-						
-			</nav>
 		</div>		
 	</header>
 		

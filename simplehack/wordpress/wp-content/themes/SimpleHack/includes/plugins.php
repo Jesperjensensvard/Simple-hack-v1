@@ -3,7 +3,7 @@
     ACF
 \*------------------------------------*/
 
-//define('GT_ACF_PRO_LICENSE_KEY', 'b3JkZXJfaWQ9Nzc0NTZ8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTYtMDMtMTYgMDk6MTA6NTI=');
+
 
 // Update ACF PRO license key automatically when using WP CLI search-replace command.
 /* if(defined('WP_CLI') && WP_CLI && defined('GT_ACF_PRO_LICENSE_KEY')) {

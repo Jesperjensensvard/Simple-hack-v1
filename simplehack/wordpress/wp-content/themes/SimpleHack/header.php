@@ -19,17 +19,23 @@
 	</head>
 
 	<body >
-	<header class="header">		
-		<nav>
-			<div class="main-menu__inner clearfix">
+	<header class="header">
+		<div>
+			<div class="logo-wrapper">
+				<h1>Simple hack</h1>
+			</div>
+			<nav>
+		
 				<?php 
 					if (0 !== $locations1['main_menu']) {
 						wp_nav_menu( array(
 							'theme_location' => 'main_menu',
 							'depth' => 3
 						) );
-					} ?>
-			</div>			
-		</nav>
+					} 
+				?>
+						
+			</nav>
+		</div>		
 	</header>
 		

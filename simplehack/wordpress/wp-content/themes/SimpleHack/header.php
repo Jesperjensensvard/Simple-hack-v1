@@ -19,34 +19,17 @@
 	</head>
 
 	<body >
-	<header class="header">
-			<div class="g-container  clearfix">
-			<a href="#" class="menu-trigger">
-				<div class="menu-trigger__icon">
-					<span>&nbsp;</span>
-					<span>&nbsp;</span>
-					<span>&nbsp;</span>
-				</div>
-			</a>
-			<div class="site-title g-title"><a href="<?php echo get_site_url(); ?>">Food Factory<span> - Mölnlycke fabriker</span></a></div>
-				<nav class="main-menu">
-					<nav class="main-menu__wrapper">
-						<div class="menu-close">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/framework/cancel.svg" alt="Cancel" />
-						</div>
-						<div class="main-menu__inner clearfix">
-							<?php $locations1= get_nav_menu_locations();
-							if (0 !== $locations1['main_menu']) {
-								wp_nav_menu( array(
-									'theme_location' => 'main_menu',
-									'depth' => 3
-								) );
-							} ?>
-						</div>
-					</nav>
-				</nav>
-			</div>
-		</header>
+	<header class="header">		
+		<nav>
+			<div class="main-menu__inner clearfix">
+				<?php 
+					if (0 !== $locations1['main_menu']) {
+						wp_nav_menu( array(
+							'theme_location' => 'main_menu',
+							'depth' => 3
+						) );
+					} ?>
+			</div>			
+		</nav>
+	</header>
 		
-		<div class="g-page-overlay clearfix"></div>
-s

@@ -1,0 +1,21 @@
+#icl_how_to_translate_link{
+	display: none;
+}
+
+/* .acf-fc-popup li a[data-layout=page_builder_offers] {
+	display: none !important;
+}
+ */
+
+
+ /*=============================
+	DÖLJA VISA LAYOUTER
+ =============================*/
+
+.acf-fc-popup.top a[data-layout=page_builder_booking_widget] {
+	display: none;
+}
+
+.post-type-offers .acf-fc-popup.top a[data-layout=page_builder_booking_widget] {
+	display: block;
+}

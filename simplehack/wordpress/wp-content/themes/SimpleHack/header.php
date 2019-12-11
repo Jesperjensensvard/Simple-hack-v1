@@ -22,7 +22,9 @@
 	<header class="header">
 		<div>
 			<div class="logo-wrapper">
-				<h1>Simple hack</h1>
+				<div>
+					<img src="<?php bloginfo('template_directory'); ?>/assets/img/demo/logo.png'?>" alt="">
+				</div>
 			</div>
 			<nav>
 		

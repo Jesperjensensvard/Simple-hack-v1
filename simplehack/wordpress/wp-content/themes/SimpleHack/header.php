@@ -8,7 +8,7 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-        <title><?php wp_title(''); ?></title>
+        <title>Simple Hack</title>
 		<?php wp_head(); ?>
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicons/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicons/favicon-32x32.png">
@@ -17,14 +17,13 @@
 		<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicons/safari-pinned-tab.svg" color="#000000">
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicons/favicon.ico">	
 	</head>
-
-	<body >
+	<body <?php body_class() ?>>
 	<header class="header">
 		<div class="g-header-special">
 			<div class="main-menu-wrapper clearfix">
 				<div class="logo-container ">
 					<div class="logo-wrapper">
-						<img src="<?php bloginfo('template_directory'); ?>/assets/img/demo/logo.png'?>" alt="">
+						<img src="<?php bloginfo('template_directory');?>/assets/img/demo/logo.png" alt="">
 					</div>
 				</div>
 				<nav class="main-nav">

@@ -265,16 +265,5 @@ function buffer_end(){
 	ob_end_flush();
 }
 
-
-
-
-// Remove inline style on captions
-add_filter('img_caption_shortcode_width', '__return_false');
-
-
-
-add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
-
-function wrap_embed_with_div($html, $url, $attr) {
-        return "<div class=\"video-container\">".$html."</div>";
-}
+add_theme_support( 'woocommerce' );
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );

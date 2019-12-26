@@ -7,7 +7,7 @@ if($count_hero == 1) {
 	$hero_class = 'hero--has-items';
 }
 
-echo '<section class="hero rsDefault '.$hero_class.' g-container g-colx2">';
+echo '<section class="hero rsDefault '.$hero_class.' ">';
 
 
 if(have_rows('hero_repeater_module')){
@@ -86,11 +86,11 @@ if(have_rows('hero_repeater_module')){
 		
 		
 		if(!empty($hero_video)) {
-			echo '<div class="hero__video">';
-			echo '<video autoplay loop muted width="100%" playsinline>';
-			echo '<source type="video/mp4" src="'.$hero_video.'" />';
+		 	echo '<div class="hero__video">';
+			echo '<video autoplay loop muted  style="width:100%;" playsinline>';
+			echo '<source type="video/mp4" src="'.$hero_video['url'].'" />';
 			echo '</video>';
-			echo '</div>';
+			echo '</div>'; 
 		} else {
 			if(!empty($img_with_focal_point)) {
 				echo '<div class="hero__img">';
@@ -105,10 +105,10 @@ if(have_rows('hero_repeater_module')){
 			echo '</a>';
 		} else {
 			echo '</div>';
+			
 		}
 
 	}
-
+	
 }
 echo '</section>';
-

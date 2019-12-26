@@ -26,6 +26,7 @@ if(have_rows('page_builder')) {
 			get_template_part('includes/sections/hero');
 		}
 	}
+	get_template_part('includes/sections/product');
 }
 
 ?>

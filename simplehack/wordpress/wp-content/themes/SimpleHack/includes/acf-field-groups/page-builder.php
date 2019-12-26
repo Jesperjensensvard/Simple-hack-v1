@@ -96,7 +96,7 @@ $fields = [
 								'key' => 'field_hero_video',
 								'name' => 'hero_video',
 								'label' => esc_html__('Hero video', 'gt_template'),
-								'type' => 'text',
+								'type' => 'file',
 								'wrapper' => [
 									'width' => 50,
 								],

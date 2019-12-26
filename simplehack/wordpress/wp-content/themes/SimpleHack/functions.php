@@ -107,6 +107,9 @@ function theme_add_scripts_and_styles() {
 	wp_register_style('style', get_template_directory_uri().'/assets/css/style.css', array(), 'all');
 	wp_enqueue_style('style');
 
+	wp_register_style('royal', get_template_directory_uri().'/assets/css/plugins/royalslider/royalslider.css', array(), 'all');
+	wp_enqueue_style('royal');
+
 	wp_deregister_script('jquery');
 	wp_deregister_script('wp-embed');
 	
@@ -187,33 +190,6 @@ function tiny_mce_custom_buttons($buttons) {
 	return $buttons;
 }
 
-add_filter('tiny_mce_before_init', 'tiny_mce_before_init_insert_formats');
-function tiny_mce_before_init_insert_formats( $init_array ) {
-	$style_formats = array(
-		array(
-			'title' => __('Paragraph - Large', 'gt_template'),
-			'selector' => 'p',
-			'classes' => 'large',
-		),
-		/* array(
-			'title' => __('Paragraph - Intro', 'gt_template'),
-			'selector' => 'p',
-			'classes' => 'g-intro',
-		),
-		array(
-			'title' => __('Paragraph - Small', 'gt_template'),
-			'selector' => 'p',
-			'classes' => 'g-small',
-		),
-		array(
-			'title' => __('Link - btn', 'gt_template'),
-			'selector' => 'a',
-			'classes' => 'g-cta',
-		), */
-	);
-	$init_array['style_formats'] = json_encode( $style_formats );
-	return $init_array;
-}
 
 add_filter('tiny_mce_before_init', 'tiny_mce_block_formats');
 function tiny_mce_block_formats($in) {

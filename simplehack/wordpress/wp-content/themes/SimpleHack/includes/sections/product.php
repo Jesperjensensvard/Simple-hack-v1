@@ -9,10 +9,10 @@ echo '<div class="list clearfix">';
  if ($wc_query->have_posts()) : while ($wc_query->have_posts()) : $wc_query->the_post(); 
     echo '<div class="item g-col g-33 has-btn">';
         echo '<div class="inner">';
-            echo '<div>';
+            echo '<div class="image-wrapper">';
             ?>
-
-            <img src=" <?php the_post_thumbnail(); ?>" alt="" class="image-square">
+    <?php   the_post_thumbnail('medium')?>
+            
             <?php
             echo '</div>'; 
                 echo '<div class="wysiwyg ">';

@@ -1,0 +1,14 @@
+2019-12-30T09:11:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\Requests\IDNAEncoder.php on line 13
+
+2019-12-30T09:25:29+00:00 CRITICAL Uncaught Error: Call to undefined function str_split_unicode() in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\hero.php:58
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template.php(724): require()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template.php(671): load_template('D:\\coding\\xammp...', false)
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\general-template.php(168): locate_template(Array, true, false)
+#3 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\page-builder.php(26): get_template_part('includes/sectio...')
+#4 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template.php(724): require('D:\\coding\\xammp...')
+#5 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template.php(671): load_template('D:\\coding\\xammp...', false)
+#6 D:\coding\xa in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\hero.php on line 58
+
+2019-12-30T09:46:54+00:00 CRITICAL require_once(): Failed opening required 'acf-field-groups/theme-settings.php' (include_path='D:\coding\xammp\php\PEAR') in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\functions.php on line 109
+

@@ -1,49 +1,4 @@
 <?php
-/*------------------------------------*\
-    Cache
-\*------------------------------------*/
-
-function cache_fragment($key, $language, $ttl, $function) {
-	$key = $key.'_'.$language;
-	if ( current_user_can( 'manage_options' ) ) {
-		call_user_func($function);
-		return;
-	}
-	$key = apply_filters('fragment_cache_prefix','fragment_cache_').$key;
-	$output = get_transient($key);
-	if ( empty($output) ) {
-		ob_start();
-		call_user_func($function);
-		$output = ob_get_clean();
-		set_transient($key, $output, $ttl);
-	}
-	echo $output;
-}
-
-function cache_array($key, $language, $ttl, $array) {
-	$key = $key.'_'.$language;
-	if ( current_user_can( 'manage_options' ) ) {
-		return $array;
-	}
-	//$output = get_transient($key);
-	//if ( empty($output) ) {
-		$output = $array;
-		set_transient($key, $output, $ttl);
-	//}
-	return $output;
-}
-
-function get_cache_array($key) {
-	if ( current_user_can( 'manage_options' ) ) {
-		return NULL;
-	} else {
-		return get_transient($key);
-	}
-}
-
-/*------------------------------------*\
-   Responsive images helper
-\*------------------------------------*/
 
 /*------------------------------------*\
    Responsive images helper
@@ -114,18 +69,6 @@ function browser_is_ie() {
 	}
 }
 
-function decrypt_recipient($text, $salt = 'i<n_%_y}G54[k=8fn!5Ie`+f^06OIaPnkxyg*nptc>~zOmnu*uRUAj] S2*?4C9J'){
-	return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $salt,
-		base64_decode($text), MCRYPT_MODE_ECB,
-		mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND)));
-}
-
-function encrypt_recipient($text, $salt = 'i<n_%_y}G54[k=8fn!5Ie`+f^06OIaPnkxyg*nptc>~zOmnu*uRUAj] S2*?4C9J'){
-	return trim(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256,
-		$salt, $text, MCRYPT_MODE_ECB,
-		mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND))));
-}
-
 function replace_between($str, $needle_start, $needle_end, $replacement) {
     $pos = strpos($str, $needle_start);
     $start = $pos === false ? 0 : $pos + strlen($needle_start);
@@ -134,16 +77,6 @@ function replace_between($str, $needle_start, $needle_end, $replacement) {
     $end = $start === false ? strlen($str) : $pos;
 
     return substr_replace($str,$replacement,  $start, $end - $start);
-}
-
-function array_random($arr, $num = 1) {
-    shuffle($arr);
-
-    $r = array();
-    for ($i = 0; $i < $num; $i++) {
-        $r[] = $arr[$i];
-    }
-    return $num == 1 ? $r[0] : $r;
 }
 
 function array_orderby() {

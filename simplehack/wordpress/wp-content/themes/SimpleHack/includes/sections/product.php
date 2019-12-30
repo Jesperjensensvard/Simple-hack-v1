@@ -10,27 +10,25 @@ echo '<div class="list clearfix">';
     echo '<div class="item g-col g-33 has-btn">';
         echo '<div class="inner">';
             echo '<div class="image-wrapper">';
+              ?>
+               <img src=" <?php the_post_thumbnail_url();  ?>" alt="" class="image-square">
+               <?php 
             ?>
-    <?php   the_post_thumbnail('medium')?>
-            
+           
             <?php
-            echo '</div>'; 
-                echo '<div class="wysiwyg ">';
-                ?>
-                  <h4><?php the_title();?></h4>
-                  <p><?php the_excerpt();?></p>
-                <?php 
-                echo '</div>';
+        echo '</div>'; 
+          echo '<div class="wysiwyg ">'; ?>
+            <h4><?php the_title();?></h4>
+            <p><?php the_excerpt();?></p>
+          <?php echo '</div>';
                 echo '<div class="btn">';
-                ?>
-                <a href=" <?php the_permalink(); ?>" >Download</a>
-                <?php
-                echo '</div>';
+          ?>
+
+          <a href=" <?php the_permalink(); ?>" >Check it out</a>
+          <?php
+      echo '</div>';
      echo '</div>';    
     echo '</div>';     
-    
-    
-     
     endwhile; 
     echo '</div>';
     echo '</div>';

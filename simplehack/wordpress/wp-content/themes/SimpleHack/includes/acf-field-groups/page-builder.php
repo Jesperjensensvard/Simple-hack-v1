@@ -210,6 +210,25 @@ $fields = [
 				],
 			],
 
+			'field_page_builder_layout_small_product' => [
+				'key' => 'field_page_builder_small_product',
+				'name' => 'builder_small_product',
+				'label' => esc_html__('Product', 'gt_template'),
+				'display' => 'block',
+				'sub_fields' => [
+					[
+						'key' => 'field_page_builder_layout_trhee_product',
+						'name' => 'page_builder_layout_trhee_product',
+						'label' => esc_html__('Show 3 Product', 'gt_template'),
+						'display' => 'block',
+						'type' => 'true_false',
+						'ui' => 1,
+						'ui_on_text' => esc_html__('Yes', 'gt_template'),
+						'ui_off_text' => esc_html__('No', 'gt_template'),
+					],
+				],
+			],
+
 			'field_page_builder_layout_box' => [
 				'key' => 'field_page_builder_box',
 				'name' => 'page_builder_box',
@@ -455,55 +474,6 @@ $fields = [
 						'label' => esc_html__('Small image two', 'gt_template'),
 						'display' => 'block',
 						'type' => 'image',
-					],
-				],
-			],
-
-			'field_page_builder_layout_map' => [
-				'key' => 'field_page_builder_map',
-				'name' => 'page_builder_map',
-				'label' => esc_html__('Map', 'gt_template'),
-				'display' => 'block',
-				'sub_fields' => [
-					[
-						'key' => 'field_page_builder_map_map',
-						'name' => 'field_page_builder_map_map',
-						'label' => esc_html__('Set map settings', 'gt_template'),
-						'type' => 'google_map',
-						'center_lat' => 0,
-						'center_lat' => '57.661000',
-						'center_lng' => '12.126220',
-					],
-					[
-						'key' => 'field_page_builder_map_map_width',
-						'name' => 'field_page_builder_map_map_full_width',
-						'label' => esc_html__('Width 100%', 'gt_template'),
-						'instructions' => esc_html__('set map to equal size as page content', 'gt_template'),
-						'display' => 'block',
-						'type' => 'true_false',
-						'ui' => 1,
-						'ui_on_text' => esc_html__('Yes', 'gt_template'),
-						'ui_off_text' => esc_html__('No', 'gt_template'),
-					],
-					[
-						'key' => 'field_page_builder_map_map_trans_bg',
-						'name' => 'field_page_builder_map_map_trans_bg',
-						'label' => esc_html__('No background', 'gt_template'),
-						'instructions' => esc_html__('Remove white background from map', 'gt_template'),
-						'display' => 'block',
-						'type' => 'true_false',
-						'ui' => 1,
-						'ui_on_text' => esc_html__('Yes', 'gt_template'),
-						'ui_off_text' => esc_html__('No', 'gt_template'),
-						'conditional_logic' => [
-							[
-								[
-									'field' => 'field_page_builder_map_map_width',
-									'operator' => '!=',
-									'value' => '1',
-								],
-							],
-						],
 					],
 				],
 			],

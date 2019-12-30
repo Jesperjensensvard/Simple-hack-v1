@@ -12,3 +12,19 @@ Stack trace:
 
 2019-12-30T09:46:54+00:00 CRITICAL require_once(): Failed opening required 'acf-field-groups/theme-settings.php' (include_path='D:\coding\xammp\php\PEAR') in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\functions.php on line 109
 
+2019-12-30T10:11:56+00:00 CRITICAL syntax error, unexpected ';', expecting ']' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 464
+
+2019-12-30T10:12:51+00:00 CRITICAL syntax error, unexpected ',' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 465
+
+2019-12-30T10:12:51+00:00 CRITICAL syntax error, unexpected ',' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 465
+
+2019-12-30T10:13:05+00:00 CRITICAL syntax error, unexpected ';', expecting ']' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 466
+
+2019-12-30T10:13:26+00:00 CRITICAL syntax error, unexpected ',' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 465
+
+2019-12-30T10:13:35+00:00 CRITICAL syntax error, unexpected ',' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 466
+
+2019-12-30T10:13:42+00:00 CRITICAL syntax error, unexpected ',' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\page-builder.php on line 468
+
+2019-12-30T11:53:39+00:00 CRITICAL syntax error, unexpected 'product' (T_STRING) in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\single-product.php on line 10
+

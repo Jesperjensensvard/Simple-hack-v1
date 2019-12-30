@@ -12,9 +12,6 @@ if(have_rows('page_builder')) {
 		}
 		elseif (get_row_layout() == 'page_builder_hero_simple') {
 			get_template_part('includes/sections/simple-hero');
-		}
-		elseif(get_row_layout() == 'page_builder_map') {
-			get_template_part('includes/sections/google-map');
 		} 
 		elseif (get_row_layout() == 'page_builder_gallary') {
 			get_template_part('includes/sections/images-text-gallary');
@@ -25,8 +22,10 @@ if(have_rows('page_builder')) {
 		elseif(get_row_layout() == 'page_builder_hero'){
 			get_template_part('includes/sections/hero');
 		}
+		elseif(get_row_layout() == 'builder_small_product'){
+			get_template_part('includes/sections/product');
+		}
 	}
-	get_template_part('includes/sections/product');
 }
 
 ?>

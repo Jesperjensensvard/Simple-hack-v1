@@ -1,0 +1,11 @@
+2020-01-09T11:00:21+00:00 CRITICAL Uncaught Error: Using $this when not in object context in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\functions.php:26
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-settings.php(497): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-config.php(89): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-load.php(37): require_once('D:\\coding\\xammp...')
+#3 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-admin\admin.php(34): require_once('D:\\coding\\xammp...')
+#4 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\functions.php on line 26
+
+2020-01-09T11:05:12+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\functions.php on line 73
+

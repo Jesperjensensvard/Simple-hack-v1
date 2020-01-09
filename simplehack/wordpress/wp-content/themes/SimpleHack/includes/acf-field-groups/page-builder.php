@@ -210,7 +210,7 @@ $fields = [
 				],
 			],
 
-			'field_page_builder_layout_small_product' => [
+		/* 	'field_page_builder_layout_small_product' => [
 				'key' => 'field_page_builder_small_product',
 				'name' => 'builder_small_product',
 				'label' => esc_html__('Product', 'gt_template'),
@@ -228,7 +228,7 @@ $fields = [
 					],
 				],
 			],
-
+ */
 			'field_page_builder_layout_box' => [
 				'key' => 'field_page_builder_box',
 				'name' => 'page_builder_box',
@@ -329,20 +329,6 @@ $fields = [
 								],
 							],
 							[
-								'key' => 'field_page_builder_box_check',
-								'name' => 'page_builder_box_check',
-								'label' => esc_html__('Black', 'gt_template'),
-								'instructions' => esc_html__('Set black background', 'gt_template'),
-								'display' => 'block',
-								'type' => 'true_false',
-								'ui' => 1,
-								'ui_on_text' => esc_html__('Yes', 'gt_template'),
-								'ui_off_text' => esc_html__('No', 'gt_template'),
-								'wrapper' => [
-									'width' => 25,
-								],
-							],
-							[
 								'key' => 'field_page_builder_box_align_left',
 								'name' => 'page_builder_box_align_left',
 								'label' => esc_html__('Align left', 'gt_template'),
@@ -427,13 +413,10 @@ $fields = [
 							[
 								'key' => 'field_page_builder_articles_bg_type',
 								'name' => 'page_builder_articles_bg_type',
-								'label' => esc_html__('Background', 'gt_template'),
-								'instructions' => esc_html__('Set transparant background', 'gt_template'),
+								'label' => esc_html__('Background-color', 'gt_template'),
+								'instructions' => esc_html__('Set background color', 'gt_template'),
 								'display' => 'block',
-								'type' => 'true_false',
-								'ui' => 1,
-								'ui_on_text' => esc_html__('Yes', 'gt_template'),
-								'ui_off_text' => esc_html__('No', 'gt_template'),
+								'type' => 'color_picker',
 							],
 						],
 					],

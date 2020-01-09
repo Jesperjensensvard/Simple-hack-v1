@@ -1,0 +1,52 @@
+2020-01-07T09:59:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\wp-db.php on line 2030
+
+2020-01-07T10:05:52+00:00 CRITICAL Uncaught Error: Call to a member function is_registration_enabled() on null in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php:25
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 25
+
+2020-01-07T10:08:35+00:00 CRITICAL Uncaught Error: Call to a member function is_registration_enabled() on null in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php:25
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 25
+
+2020-01-07T10:08:52+00:00 CRITICAL Uncaught Error: Call to a member function get_checkout_fields() on null in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php:33
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 33
+
+2020-01-07T10:09:55+00:00 CRITICAL syntax error, unexpected 'do_action' (T_STRING), expecting ',' or ';' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 25
+
+2020-01-07T10:10:36+00:00 CRITICAL syntax error, unexpected 'do_action' (T_STRING), expecting ',' or ';' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 25
+
+2020-01-07T10:11:01+00:00 CRITICAL Uncaught Error: Call to a member function get_checkout_fields() on null in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php:35
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 35
+
+2020-01-07T10:11:15+00:00 CRITICAL Uncaught Error: Call to a member function get_checkout_fields() on null in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php:35
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-checkout.php on line 35
+
+2020-01-07T12:18:05+00:00 CRITICAL require_once(): Failed opening required 'includes/admin-ui.php' (include_path='D:\coding\xammp\php\PEAR') in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\simpleHack-child\functions.php on line 5
+
+2020-01-07T15:47:03+00:00 CRITICAL syntax error, unexpected ''fields'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\theme-settings.php on line 85
+
+2020-01-07T15:47:03+00:00 CRITICAL syntax error, unexpected ''fields'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\acf-field-groups\theme-settings.php on line 85
+

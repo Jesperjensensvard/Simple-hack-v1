@@ -3,20 +3,15 @@
 /*------------------------------------*\
    Load custom javascript and css in admin
 \*------------------------------------*/
-
+/* 
 add_action('admin_enqueue_scripts', 'custom_admin_scripts_and_styles');
 function custom_admin_scripts_and_styles() {
     if(is_admin()) {
         $admin_js_ver  = date('ymd-Gis', filemtime(get_template_directory().'/assets/js/admin/scripts.min.js'));
-        $admin_css_ver = date('ymd-Gis', filemtime(get_template_directory().'/assets/css/admin/admin.css'));
-
-        wp_register_style('admin-style', get_template_directory_uri().'/assets/css/admin/admin.css', array(), $admin_css_ver, 'all');
-        wp_enqueue_style('admin-style');
-
         wp_register_script('admin-script', get_template_directory_uri().'/assets/js/admin'.'/scripts.min.js', array(), $admin_js_ver, true);
         wp_enqueue_script('admin-script');
     }
-}
+} */
 
 /*------------------------------------*\
    Login Page & Footer
@@ -32,7 +27,7 @@ function custom_login_logo() { ?>
 			width: 320px !important;
         }
     </style>
-<?php }
+<?php } 
 
 add_filter('login_headerurl', 'custom_login_logo_url');
 function custom_login_logo_url() {
@@ -46,7 +41,7 @@ function custom_login_logo_url_title() {
 
 add_filter('admin_footer_text', 'custom_admin_footer');
 function custom_admin_footer() {
-	echo '<span id="footer-thankyou">'.__('Developed by', 'gt_template').' <a href="http://www.grafi.se" target="_blank">Grafi Technology</a></span>';
+	echo '<span id="footer-thankyou">'.__('Developed by', 'gt_template').' <a href="" target="_blank">Jesper</a></span>';
 }
 
 /*------------------------------------*\
@@ -140,15 +135,4 @@ function welcome_dashboard_widget() {
 add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
 function add_custom_dashboard_widget() {
 	wp_add_dashboard_widget('welcome_dashboard_widget', __('Welcome!', 'gt_template'), 'welcome_dashboard_widget');
-}
-
-/*------------------------------------*\
-   Post lists
-\*------------------------------------*/
-
-// Custom date format for date column
-add_filter('post_date_column_time', 'custom_date_column_time',10 , 2);
-function custom_date_column_time($h_time, $post) {
-    $h_time = get_post_time('Y-m-d H:i', false, $post);
-    return $h_time;
 }

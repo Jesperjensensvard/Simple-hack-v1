@@ -11,8 +11,96 @@ require_once('includes/grafi.php');
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+// maybe need to add this back in som style things
+//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+
+/*------------------------------------*\
+    OPTIONS AND COSTUM POSTS
+\*------------------------------------*/
+
+
+
+add_action('init', 'register_logo_options_page');
+add_action('init',  'register_acf_fields');
+    
+function register_logo_options_page()    {
+	if( function_exists('acf_add_options_page') ) {
+		$option_page = acf_add_options_page(array(
+			'page_title'    => 'Theme Settings',
+			'menu_title'    => 'Theme Settings',
+			'menu_slug'     => 'Theme-Settings',
+			'capability'    => 'edit_posts',
+			'redirect'  => false
+			));
+	}
+}
+function register_acf_fields ()  {
+
+        if( function_exists('acf_add_local_field_group') ):
+
+            acf_add_local_field_group(array (
+                'key' => 'footer-text-holder',
+                'title' => 'Footer',
+                'fields' => [
+					[
+						'key' => 'field_theme_setting_footer_tab',
+						'name' => 'theme_setting_footer_tab',
+						'label' => esc_html__('Footer', 'gt_template'),
+						'type' => 'tab',
+						'placement' => 'left',
+					],
+					[
+						'key' => 'field_theme_setting_footer_content',
+						'name' => 'theme_setting_footer_content',
+						'label' => esc_html__('Content', 'gt_template'),
+						'type' => 'wysiwyg',
+						'media_upload' => 0,
+						'toolbar' => 'very_simple',
+					],
+					[
+						'key' => 'field_theme_setting_error_page_tab',
+						'name' => 'theme_setting_error_page_tab',
+						'label' => esc_html__('404 - Error page', 'gt_template'),
+						'type' => 'tab',
+						'placement' => 'left',
+					],
+					[
+						'key' => 'field_theme_setting_error_page_content',
+						'name' => 'theme_setting_error_page_content',
+						'label' => esc_html__('Content', 'gt_template'),
+						'type' => 'wysiwyg',
+						'media_upload' => 0,
+					],
+
+				],
+                'location' => array (
+                    array (
+                        array (
+                            'param' => 'options_page',
+                            'operator' => '==',
+                            'value' => 'Theme-Settings',
+                            ),
+                        ),
+                    ),
+                'menu_order' => 0,
+                'position' => 'normal',
+                'style' => 'default',
+                'label_placement' => 'top',
+                'instruction_placement' => 'label',
+                'hide_on_screen' => '',
+                'active' => 1,
+                'description' => '',
+                ));
+
+	endif;
+
+}
+
+
+
 
 
 /*------------------------------------*\
@@ -58,21 +146,34 @@ function sanitize_filename_on_upload($filename) {
 /*------------------------------------*\
     Styles & Scrips
 \*------------------------------------*/
-
-add_action('wp_enqueue_scripts', 'theme_add_scripts_and_styles', 1);
-function theme_add_scripts_and_styles() {
-	wp_register_style('style', get_template_directory_uri().'/assets/css/style.css', array(), 'all');
-	wp_enqueue_style('style');
-
-	wp_register_style('royal', get_template_directory_uri().'/assets/css/plugins/royalslider/royalslider.css', array(), 'all');
-	wp_enqueue_style('royal');
-
-	wp_deregister_script('jquery');
-	wp_deregister_script('wp-embed');
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+function my_theme_enqueue_styles() {
+ 
+    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+ 
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/assets/css/style.css',
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
+	);
 	
-	wp_register_script('script', get_template_directory_uri().'/assets/js/scripts.min.js', array(), true);
-	wp_enqueue_script('script');
+	wp_enqueue_style( 'child-royal',
+	get_stylesheet_directory_uri() . '/assets/css/plugins/royalslider/royalslider.css',
+	array( $parent_style ),
+	wp_get_theme()->get('Version')
+	);
 }
+
+
+function my_scripts_method() {
+    wp_enqueue_script(
+        'custom-script',
+        get_stylesheet_directory_uri() . '/assets/js/scripts.min.js',
+        array( 'jquery' )
+	);
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 // Add defer to scripts
 add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
@@ -97,12 +198,6 @@ function add_async_attribute($tag, $handle) {
 	}
 	return $tag;
 }
-
-/* // Remove Gutenberg styles
-add_action('wp_enqueue_scripts', 'remove_wp_block_library', 100);
-function remove_wp_block_library() {
-	wp_dequeue_style('wp-block-library');
-} */
 
 add_action('admin_init', 'tiny_mce_add_editor_styles');
 function tiny_mce_add_editor_styles() {

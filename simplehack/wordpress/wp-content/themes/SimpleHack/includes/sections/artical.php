@@ -19,7 +19,7 @@ if(have_rows('page_builder_repeater_articles')){
         $artical_bg_type = get_sub_field('page_builder_articles_bg_type');
         $translated_artical_pos = esc_html__($artical_position, 'gt_template');
         ?>
-            <section class="s-left-right <?php if($artical_bg_type == true) { echo 'is-transparant';} if($artical_space == true) { echo ' spacer';} ?>">
+            <section class="s-left-right <?php  if($artical_space == true) { echo ' spacer';} ?>" style="background-color: <?php if($artical_bg_type) { echo $artical_bg_type;} ?>;">
                 <div class="g-container g-colx2">
                     <div class="g-100 has-match-height clearfix">
                         <div class="g-50 img-container <?php if($translated_artical_pos == esc_html__('left', 'gt_template')){ echo ' left';} else{ echo ' right';} ?>">

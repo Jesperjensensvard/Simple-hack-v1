@@ -1,0 +1,16 @@
+2020-01-04T14:37:18+00:00 CRITICAL Uncaught Error: Call to a member function get_formatted_line_subtotal() on string in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-cart.php:159
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-cart.php on line 159
+
+2020-01-04T14:38:27+00:00 CRITICAL Uncaught Error: Call to a member function get_formatted_line_subtotal() on string in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-cart.php:161
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\page-cart.php on line 161
+

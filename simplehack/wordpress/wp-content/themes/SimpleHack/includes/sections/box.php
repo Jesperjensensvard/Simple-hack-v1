@@ -9,7 +9,6 @@ while(have_rows('page_builder_repeater_box')) { the_row();
     $use_square = get_sub_field('page_builder_box_img_square');
     $text = get_sub_field('page_builder_box_text');
     $button = get_sub_field('page_builder_box_link');
-    $color = get_sub_field('page_builder_box_check');
     $text_align_left = get_sub_field('page_builder_box_align_left');
     $img_square = get_sub_field('page_builder_box_img_square_img');
     $thicker_font_for_p = get_sub_field('page_builder_box_text_bolder');
@@ -36,11 +35,10 @@ while(have_rows('page_builder_repeater_box')) { the_row();
     
     ?>
 
-    <div class="item g-col g-<?php echo $width;?> <?php if(!empty($button)){echo 'has-btn';}  if($color == true  ){ echo ' is-black';} ?> ">
+    <div class="item g-col g-<?php echo $width;?> <?php if(!empty($button)){echo 'has-btn';} ?> ">
     <div class="inner">
    
     <?php
-    
     
     if($use_square && !empty($img_square)){
         $img_square_src = wp_get_attachment_image_url($img_square['id'], 'square-box');
@@ -49,8 +47,10 @@ while(have_rows('page_builder_repeater_box')) { the_row();
         echo '</div>'; 
     } 
     elseif(!$use_square && !empty($img_with_focal_point)) {
+
+        // may need to add image-responsify back to image box
         ?>
-        <div class="image image-responsify">
+        <div class="image ">
         <?php 
         echo focalpoint_with_srcset($image_id, $image_size, $max_width, $alt, $calc_x_center, $calc_y_center);
         echo '</div>'; 

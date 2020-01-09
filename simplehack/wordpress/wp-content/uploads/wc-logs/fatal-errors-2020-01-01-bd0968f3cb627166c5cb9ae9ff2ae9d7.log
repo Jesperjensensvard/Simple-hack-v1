@@ -1,0 +1,35 @@
+2020-01-01T15:54:19+00:00 CRITICAL Uncaught Error: Call to undefined function the_description() in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\single-product.php:29
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\single-product.php on line 29
+
+2020-01-01T15:57:38+00:00 CRITICAL Uncaught Error: Call to a member function get_type() on string in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php:1571
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\single-product.php(31): woocommerce_template_single_add_to_cart()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#3 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#4 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 1571
+
+2020-01-01T16:10:38+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on string in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\templates\single-product\sale-flash.php:25
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1560): wc_get_template('single-product/...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\class-wp-hook.php(288): woocommerce_show_product_sale_flash('')
+#3 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#4 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\woocommerce\single- in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\templates\single-product\sale-flash.php on line 25
+
+2020-01-01T16:11:29+00:00 CRITICAL Uncaught Error: Call to a member function is_on_sale() on string in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\templates\single-product\sale-flash.php:25
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1560): wc_get_template('single-product/...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\class-wp-hook.php(288): woocommerce_show_product_sale_flash('')
+#3 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters('', Array)
+#4 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#5 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\woocommerce\single- in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\plugins\woocommerce\templates\single-product\sale-flash.php on line 25
+

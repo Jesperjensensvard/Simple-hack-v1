@@ -1,0 +1,8 @@
+2020-01-03T12:26:38+00:00 CRITICAL Uncaught Error: Call to a member function get_items() on bool in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\woocommerce\single-product.php:36
+Stack trace:
+#0 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\template-loader.php(98): include()
+#1 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-blog-header.php(19): require_once('D:\\coding\\xammp...')
+#2 D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\index.php(17): require('D:\\coding\\xammp...')
+#3 {main}
+  thrown in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\woocommerce\single-product.php on line 36
+

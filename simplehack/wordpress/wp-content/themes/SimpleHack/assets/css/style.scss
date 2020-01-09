@@ -7,9 +7,7 @@ html,body{
     font-size: 16px;
   
 }
-body{
-    background: #808080;
-}
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -117,6 +115,13 @@ $desktop: '1400px';
 .g-100{
     width: 100%;
 }
+
+@include media-max(800px) {
+	.g-20, .g-25, .g-30, .g-33,  .g-40, .g-50, .g-60, .g-70, .g-80, .g-90, .g-100{
+        width: 100%;
+    }
+}
+
 /* ==============================================================
 HEADER
 ================================================================*/
@@ -178,6 +183,20 @@ header{
         }
    }
 }
+.s-header-special-air{
+    background-color: #333333;
+    position: relative;
+    top: 0;
+    width: 100%;
+    min-height: 120px;
+}
+.woocommerce-products-header{
+    display: none;
+}
+.entry-header{
+    display: none;
+}
+
 /* ==============================================================
 HERO DYNAMIC
 ================================================================*/
@@ -359,9 +378,111 @@ HERO DYNAMIC
 }
 
 /* ==============================================================
+HERO-SIMPLE
+================================================================*/
+.simple-hero {
+    margin-bottom: 20px;
+  .image-responsify{
+    width: 100%;
+    min-height: 800px ;
+    overflow: hidden;
+    margin: 0;
+
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 100%;
+        min-width: 100%;
+
+      }
+  }
+  .simple-hero-inner{
+      position: relative;
+      height: 100%;
+  }
+  .text-buttunon-handler,
+  .image-responsify{
+      z-index: 999;
+  }
+
+  .wysiwyg {
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  .text-buttunon-handler {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+  }
+  .text-buttunon-handler.left {
+    position: absolute;
+    left: 25%;
+    top: 45%;
+    text-align: left;
+    width: 40%;
+
+    p {
+        padding: 0 40px;
+
+    }
+    h1, h2, h3, h5, h4, h6 {
+        padding: 0 40px;
+    }
+  }
+  .btn {
+    padding: 0 40px;
+    color: #fff;
+     a {
+        
+        color: #fff;
+        text-align: center !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 16px;
+        min-width: 150px;
+        padding: 13px 20px;
+        border: 2px solid #fff;
+        display: inline-block;
+     }
+     a:hover {background: #ffffff;color: #000;}
+  }
+}
+@include media-max(776px) {
+    .simple-hero {
+      .text-buttunon-handler.left {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+
+        p,h1, h2, h3, h5, h4, h6,.btn {
+            padding: 0 10px;
+        }
+      }
+    }
+}
+
+
+/* ==============================================================
 BOX
 ================================================================*/
 .s-box {
+    padding-top: 20px;
+    background-color: #333333;
+    margin-bottom: 30px;
     .list {
         -ms-box-orient: horizontal;
         display: -webkit-box;
@@ -380,10 +501,12 @@ BOX
 
     .inner {
         text-align: center;
-        background: #000000;
+        border: 1px solid #000000;
+        border-radius: 5px;
         position: relative;
         height: 100%;
-        color: #ffffff;
+        background-color: #ffffff;
+        
 
         .wysiwyg {
             padding: 20px 40px 20px 40px;
@@ -420,19 +543,19 @@ BOX
             padding-bottom: 50px;
 
             a {
-                color: lime;
+                color: #000000;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 font-size: 16px;
                 min-width: 150px;
                 padding: 13px 20px;
-                border: 2px solid lime;
+                border: 2px solid #000000;
                 border-radius: 5px;
                 display: inline-block;
             }
             a:hover {
                color:#ffffff;
-               background-color: lime;
+               background-color: #000000;
             }
         }
     }
@@ -461,8 +584,6 @@ BOX
 		}
 	}
 }
-
-
 
 /* ==============================================================
 WYSIWYG
@@ -505,11 +626,187 @@ WYSIWYG
 		letter-spacing: 1px;
     }
 }
+
 /* ==============================================================
-SECTION TEXT-LEFT&RIGHT AND IMG-LEFT&RIGHT
+STANDARD TEXT
+================================================================*/
+.s-standard {
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    .text-container {
+        width: 100%;
+        text-align: center;
+        color: #000;
+        .wysiwyg {
+            padding: 0 70px;
+        }
+    }
+}
+
+@include media-max(740px) {
+	.s-standard {
+		.text-container {
+			.wysiwyg {
+                padding: 0;
+			}
+		}
+	}
+}
+
+
+/* ==============================================================
+GALLARY AND TEXT
+================================================================*/
+.s-text-and-gallary{
+    margin-bottom: 10px;
+
+    .container {
+        position: relative;
+        width: 100%;
+
+        .inner {
+
+            .text {
+                float: left;
+                width: 33.333%;
+
+                .bg-wrapper{
+
+                    .bg {
+                        color: #ffffff;
+                        background: #000;
+                        text-align: center;
+
+                        .center-gallary-text {
+                            z-index: 10;
+                            text-align: center;
+                            width: 100%;
+                            padding: 0 35px;
+                        }
+                    }
+                }
+            }
+
+            .image1 {
+                float: right;
+                width: 66.666%;
+            }
+
+            .image2,
+            .image3 {
+                float: left;
+                width: 33.333%;
+                position: relative;
+            }
+
+            .img-wrapper {
+                width: 100%;
+            }
+
+            .img img {
+                display: block;
+                width: 100%;
+            }
+
+        }
+    }
+    @include media-max(840px) {
+        .container {
+            position: relative;
+            width: 100%;
+
+            .inner {
+                .text, .image1 {
+                    width: 100%;
+                }
+                .bg {
+                    padding: 20px;
+                }
+                .text .bg-wrapper .bg .center-gallary-text {
+                    padding: 0;
+                }
+                .image2,
+                .image3 {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include media-min(840px) {
+        .container {
+            position: relative;
+            width: 100%;
+            padding-top: 66%;
+
+            .inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+
+                .text {
+                    float: left;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+
+                    .bg-wrapper{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 5px;
+                        left: 5px;
+
+                        .bg {
+                            position: absolute;
+                            top: 5px;
+                            bottom: 5px;
+                            overflow: hidden;
+                            width: 100%;
+                            color: #ffffff;
+                            background: #000;
+                            text-align: center;
+
+
+                            .center-gallary-text {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: 10;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .image1,
+                .image2,
+                .image3 {
+                    height: 50%;
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                .img-wrapper {
+                    position: absolute;
+                    top: 5px;
+                    bottom: 5px;
+                    overflow: hidden;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* ==============================================================
+ARTICAL TEXT-LEFT&RIGHT AND IMG-LEFT&RIGHT
 ================================================================*/
 .s-left-right {
-    background-color: #ffffff;
+    
 
     .g-50 {
         position: relative;
@@ -538,6 +835,10 @@ SECTION TEXT-LEFT&RIGHT AND IMG-LEFT&RIGHT
             width: 100%;
             height: 100%;
             padding: 0 20px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .text-handler {
@@ -548,8 +849,6 @@ SECTION TEXT-LEFT&RIGHT AND IMG-LEFT&RIGHT
     .left { order: 1;}
     .right{ order: 2;} 
 }
-.s-left-right.is-transparant.spacer {background-color: transparent;padding: 50px 0;}
-.s-left-right.is-transparant{background-color: transparent;}
 .s-left-right.spacer {padding: 50px 0;} 
     
 @include media-max(776px) {
@@ -587,50 +886,49 @@ SECTION TEXT-LEFT&RIGHT AND IMG-LEFT&RIGHT
 }
 
 
+/* ==============================================================
+404 PAGE
+================================================================*/
 
+.s-404  {
+    min-height: 50vh;
+    text-align: center;
+
+    .wysiwyg {
+       margin-top: 40px;
+    }
+}
 
 
 
 /* ==============================================================
-PRODUCT PAGE TEMPLATE CSS
+FOOTER
 ================================================================*/
+.footer {
+    background: #333333;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 70px 0;
 
-
-.s-product-product-hero{
-    width: 100%;
-    margin-bottom: 40px;
-    .product-image-text-container{
-        width: 100%;
-        position: relative;
-        .product-image-wrapper{
-            position: relative;
-            width: 100%;
-            min-height: 500px; 
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            .producct-text-wrapper-holder{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10;
-                text-align: center;
-                color: #ffffff;
-                h1{
-                    letter-spacing: 2px;
-                    text-transform: capitalize;
-                    font-size: 60px;
-                }
-                h4{
-                    font-size: 30px;
-                    letter-spacing: 1px;
-                    text-transform: capitalize;
-                    font-size: 20px;
-                    line-height: 30px;
-                }
-            }
-        }
+    a {
+        color: #ffffff;
     }
 
+    .logo {
+        padding-bottom: 50px;
+
+        img {
+            display: block;
+            width: 100px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+    .address {
+        p {
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+    }
 }

@@ -9,124 +9,7 @@ $fields = [
 		'type' => 'flexible_content',
 		'layouts' => [
 
-			'field_page_builder_layout_hero' => [
-				'key' => 'field_page_builder_hero',
-				'name' => 'page_builder_hero',
-				'label' => esc_html__('Hero', 'gt_template'),
-				'display' => 'block',
-				'sub_fields' => [
-					[
-					'key' => 'field_hero_repeater_module',
-					'name' => 'hero_repeater_module',
-					'label' => esc_html__('Hero', 'gt_template'),
-					'type' => 'repeater',
-					'layout' => 'block',
-					'button_label' => esc_html__('Add new item', 'gt_template'),
-					'sub_fields' => [
-							[
-								'key' => 'field_hero_headline',
-								'name' => 'hero_headline',
-								'label' => esc_html__('Headline', 'gt_template'),
-								'type' => 'text',
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_hero_headline_tag',
-								'name' => 'hero_headline_tag',
-								'label' => esc_html__('Headline - tag (for seo)', 'gt_template'),
-								'type' => 'select',
-								'required' => '1',
-								'choices' => array(
-									'h1' => esc_html__('Heading 1', 'gt_template'),
-									'h2' => esc_html__('Heading 2', 'gt_template'),
-									'h3' => esc_html__('Heading 3', 'gt_template'),
-									'h4' => esc_html__('Heading 4', 'gt_template'),
-									'h5' => esc_html__('Heading 5', 'gt_template'),
-									'p' => esc_html__('Paragraph', 'gt_template'),
-								),
-								'default_value' => 'h2',
-								'layout' => 'horizontal',
-								'return_format' => 'value',
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_hero_text_item',
-								'name' => 'hero_text_item',
-								'label' => esc_html__('Text', 'gt_template'),
-								'type' => 'textarea',
-								'rows' => 2,
-								'wrapper' => [
-									'width' => 100,
-								],
-							],
-							[
-								'key' => 'field_field_hero_left',
-								'name' => 'page_hero_left',
-								'label' => esc_html__('Location', 'gt_template'),
-								'instructions' => esc_html__('Set Text to the left', 'gt_template'),
-								'display' => 'block',
-								'type' => 'true_false',
-								'ui' => 1,
-								'ui_on_text' => esc_html__('Yes', 'gt_template'),
-								'ui_off_text' => esc_html__('No', 'gt_template'),
-								'layout' => 'horizontal',
-								'return_format' => 'value',
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_hero_image',
-								'name' => 'hero_image',
-								'label' => esc_html__('Image with custom focus', 'gt_template'),
-								'type' => 'focal_point',
-								'save_format' => 'object',
-								'image_size' => 'large',
-								'preview_size' => 'medium',
-								'library' => 'all',
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_hero_video',
-								'name' => 'hero_video',
-								'label' => esc_html__('Hero video', 'gt_template'),
-								'type' => 'file',
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_hero_link',
-								'name' => 'hero_link',
-								'label' => __('Link', 'gt_template'),
-								'type' => 'link',
-								'return_format' => 'array',
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_hero_opacity',
-								'name' => 'hero_opacity',
-								'label' => esc_html__('Opacity', 'gt_template'),
-								'type' => 'number',
-							],
-							[
-								'key' => 'field_hero_color',
-								'name' => 'hero_color',
-								'label' => esc_html__('Color', 'gt_template'),
-								'type' => 'color_picker',
-							],
-						],
-					],
-				],
-			],
+		
 
 			'field_page_builder_layout_hero_simple' => [
 				'key' => 'field_page_builder_hero_simple',
@@ -210,25 +93,98 @@ $fields = [
 				],
 			],
 
-		/* 	'field_page_builder_layout_small_product' => [
+		 	'field_page_builder_layout_small_product' => [
 				'key' => 'field_page_builder_small_product',
 				'name' => 'builder_small_product',
 				'label' => esc_html__('Product', 'gt_template'),
 				'display' => 'block',
 				'sub_fields' => [
 					[
-						'key' => 'field_page_builder_layout_trhee_product',
-						'name' => 'page_builder_layout_trhee_product',
-						'label' => esc_html__('Show 3 Product', 'gt_template'),
+						'key' => 'field_page_builder_layout_text_product',
+						'name' => 'page_builder_layout_text_product',
+						'label' => esc_html__('show Recent', 'gt_template'),
+						'display' => 'block',
+						'type' => 'text',
+					],
+					[
+						'key' => 'field_page_builder_layout_fetured_product',
+						'name' => 'page_builder_layout_fetured_product',
+						'label' => esc_html__('show Recent', 'gt_template'),
 						'display' => 'block',
 						'type' => 'true_false',
 						'ui' => 1,
 						'ui_on_text' => esc_html__('Yes', 'gt_template'),
 						'ui_off_text' => esc_html__('No', 'gt_template'),
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_layout_sale_product',
+									'operator' => '!=',
+									'value' => '1',
+								],
+								[
+									'field' => 'field_page_builder_layout_best_selling_product',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_layout_sale_product',
+						'name' => 'page_builder_layout_sale_product',
+						'label' => esc_html__('show products on sale', 'gt_template'),
+						'display' => 'block',
+						'type' => 'true_false',
+						'ui' => 1,
+						'ui_on_text' => esc_html__('Yes', 'gt_template'),
+						'ui_off_text' => esc_html__('No', 'gt_template'),
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_layout_best_selling_product',
+									'operator' => '!=',
+									'value' => '1',
+								],
+								[
+									'field' => 'field_page_builder_layout_fetured_product',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_layout_best_selling_product',
+						'name' => 'page_builder_layout_best_selling_product',
+						'label' => esc_html__('show best selling products', 'gt_template'),
+						'display' => 'block',
+						'type' => 'true_false',
+						'ui' => 1,
+						'ui_on_text' => esc_html__('Yes', 'gt_template'),
+						'ui_off_text' => esc_html__('No', 'gt_template'),
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_layout_sale_product',
+									'operator' => '!=',
+									'value' => '1',
+								],
+								[
+									'field' => 'field_page_builder_layout_fetured_product',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							
+							],
+						],
+						
 					],
 				],
 			],
- */
+ 
 			'field_page_builder_layout_box' => [
 				'key' => 'field_page_builder_box',
 				'name' => 'page_builder_box',

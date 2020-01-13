@@ -4,7 +4,7 @@
 \*------------------------------------*/
 require_once('includes/admin-ui.php');
 require_once('includes/plugins.php');
-require_once('includes/grafi.php');
+require_once('includes/special.php');
 /*------------------------------------*\
     Theme Support
 \*------------------------------------*/
@@ -127,12 +127,6 @@ if(function_exists('add_image_size')) {
 	add_image_size('gallery-wide', 900, 485, true);
 }
 
-add_filter('image_size_names_choose', 'custom_image_size_names');
-function custom_image_size_names($sizes) {
-    return array_merge($sizes, array(
-        //'custom_image' => __('Custom Image', 'gt_template'),
-    ));
-}
 
 function sanitize_filename_on_upload($filename) {
 	$ext = explode('.', $filename);
@@ -158,11 +152,7 @@ function my_theme_enqueue_styles() {
         wp_get_theme()->get('Version')
 	);
 	
-	wp_enqueue_style( 'child-royal',
-	get_stylesheet_directory_uri() . '/assets/css/plugins/royalslider/royalslider.css',
-	array( $parent_style ),
-	wp_get_theme()->get('Version')
-	);
+	
 }
 
 
@@ -172,6 +162,7 @@ function my_scripts_method() {
         get_stylesheet_directory_uri() . '/assets/js/scripts.min.js',
         array( 'jquery' )
 	);
+  
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
@@ -236,23 +227,30 @@ function shortcodes_menu_shortcode_button_init() {
 	add_filter('mce_buttons', 'shortcodes_menu_add_tinymce_button');
 }
 
-// This callback registers our plug-in
-function shortcodes_menu_register_tinymce_plugin($plugin_array) {
-	$plugin_array['shortcodes_menu_button'] = get_template_directory_uri().'/assets/js/admin'.'/editor-shortcodes.min.js';
-	return $plugin_array;
-}
-
-// This callback adds our button to the toolbar
-function shortcodes_menu_add_tinymce_button($buttons) {
-	// Add the button ID to the $button array
-	$buttons[] = "shortcodes_menu_button";
-	return $buttons;
-}
 
 
 /*------------------------------------*\
     Reset functions
 \*------------------------------------*/
+
+remove_action( 'woocommerce_after_shop_loop_item', 'sp_loop_product_description', 6 );
+add_action( 'woocommerce_after_shop_loop_item', 'ssd_powerpack_add_shortcodes_short_description', 6 );
+
+function ssd_powerpack_add_shortcodes_short_description() {
+    global $product;
+
+    $wc_product = wc_get_product( $product );
+
+    if ( ! $wc_product ) {
+        return false;
+    }
+
+    $short_description = $wc_product->get_short_description();
+
+    if ( '' !== $short_description ) {
+        echo '<div itemprop="description">' . do_shortcode( wpautop( wptexturize( $short_description ) ) ) . '</div>';
+    }    
+}
 
 // Remove comments in header and footer
 add_action('get_header', 'buffer_start');

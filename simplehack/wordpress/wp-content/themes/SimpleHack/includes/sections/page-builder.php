@@ -3,7 +3,7 @@
 if(have_rows('page_builder')) {
 
 	while ( have_rows('page_builder')) { the_row();
-
+		
 		if(get_row_layout() == 'page_builder_box'){
 			get_template_part('includes/sections/box');
 		} 
@@ -21,6 +21,9 @@ if(have_rows('page_builder')) {
 		}
 		elseif(get_row_layout() == 'page_builder_hero'){
 			get_template_part('includes/sections/hero');
+		}
+		elseif(get_row_layout() == 'builder_small_product'){
+			get_template_part('includes/sections/productdisplay');
 		}
 		
 	}

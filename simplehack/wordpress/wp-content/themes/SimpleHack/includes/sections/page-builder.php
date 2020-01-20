@@ -19,7 +19,7 @@ if(have_rows('page_builder')) {
 		elseif(get_row_layout() == 'page_builder_standard'){
 			get_template_part('includes/sections/standard');
 		}
-		elseif(get_row_layout() == 'page_builder_hero'){
+		elseif(get_row_layout() == 'page_builder_big_hero'){
 			get_template_part('includes/sections/hero');
 		}
 		elseif(get_row_layout() == 'builder_small_product'){

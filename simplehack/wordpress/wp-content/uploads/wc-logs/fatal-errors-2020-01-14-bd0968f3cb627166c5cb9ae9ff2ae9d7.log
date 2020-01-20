@@ -1,0 +1,12 @@
+2020-01-14T11:53:04+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\hero.php on line 29
+
+2020-01-14T11:59:47+00:00 CRITICAL syntax error, unexpected end of file in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\hero.php on line 106
+
+2020-01-14T12:01:37+00:00 CRITICAL syntax error, unexpected ')' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\hero.php on line 70
+
+2020-01-14T12:02:32+00:00 CRITICAL syntax error, unexpected '<' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\includes\sections\hero.php on line 47
+
+2020-01-14T13:53:18+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-includes\wp-db.php on line 2030
+
+2020-01-14T14:02:15+00:00 CRITICAL syntax error, unexpected ''position'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in D:\coding\xammp\htdocs\Simple-hack-v1\simplehack\wordpress\wp-content\themes\SimpleHack\functions.php on line 89
+

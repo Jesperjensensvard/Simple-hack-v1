@@ -1,5 +1,5 @@
 <?php
-
+// MAIN PAGEBUILDER FIELDS
 
 $fields = [
 	[
@@ -72,6 +72,166 @@ $fields = [
 						'name' => 'page_builder_simple_color',
 						'label' => esc_html__('Color', 'gt_template'),
 						'type' => 'color_picker',
+					],
+				],
+			],
+
+			'field_page_builder_big_hero' => [
+				'key' => 'field_page_builder_big_hero',
+				'name' => 'page_builder_big_hero',
+				'label' => esc_html__('Big/hero', 'gt_template'),
+				'display' => 'block',
+				'sub_fields' => [
+					[
+						'key' => 'field_page_builder_big_hero_image',
+						'name' => 'page_builder_big_hero_image',
+						'label' => esc_html__('Hero Image', 'gt_template'),
+						'display' => 'block',
+						'type' => 'true_false',
+						'ui' => 1,
+						'ui_on_text' => esc_html__('Yes', 'gt_template'),
+						'ui_off_text' => esc_html__('No', 'gt_template'),
+					],
+					[
+						'key' => 'field_page_builder_big_hero_video',
+						'name' => 'page_builder_big_hero_video',
+						'label' => esc_html__('Hero Video', 'gt_template'),
+						'display' => 'block',
+						'type' => 'true_false',
+						'ui' => 1,
+						'ui_on_text' => esc_html__('Yes', 'gt_template'),
+						'ui_off_text' => esc_html__('No', 'gt_template'),
+					],
+					[
+						'key' => 'field_page_builder_big_hero_video_video',
+						'name' => 'page_builder_big_hero_video_video',
+						'label' => esc_html__('Hero Video', 'gt_template'),
+						'display' => 'block',
+						'type' => 'file',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_image',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					
+					],
+					[
+						'key' => 'field_page_builder_big_hero_video_title',
+						'name' => 'page_builder_big_hero_video_title',
+						'label' => esc_html__('Hero title', 'gt_template'),
+						'display' => 'block',
+						'type' => 'text',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_image',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_big_hero_video_text',
+						'name' => 'page_builder_big_hero_video_text',
+						'label' => esc_html__('Hero text', 'gt_template'),
+						'display' => 'block',
+						'type' => 'text',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_image',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_big_hero_video_link',
+						'name' => 'page_builder_big_hero_video_link',
+						'label' => esc_html__('Hero link', 'gt_template'),
+						'display' => 'block',
+						'type' => 'link',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_image',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_big_hero_image_image',
+						'name' => 'page_builder_big_hero_image_image',
+						'label' => esc_html__('Hero image', 'gt_template'),
+						'display' => 'block',
+						'type' => 'image',
+						'save_format' => 'object',
+						'image_size' => 'large',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_video',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_big_hero_image_title',
+						'name' => 'page_builder_big_hero_image_title',
+						'label' => esc_html__('Hero title', 'gt_template'),
+						'display' => 'block',
+						'type' => 'text',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_video',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_big_hero_image_text',
+						'name' => 'page_builder_big_hero_image_text',
+						'label' => esc_html__('Hero text', 'gt_template'),
+						'display' => 'block',
+						'type' => 'text',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_video',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
+					],
+					[
+						'key' => 'field_page_builder_big_hero_image_link',
+						'name' => 'page_builder_big_hero_image_link',
+						'label' => esc_html__('Hero link', 'gt_template'),
+						'display' => 'block',
+						'type' => 'link',
+						'conditional_logic' => [
+							[
+								[
+									'field' => 'field_page_builder_big_hero_video',
+									'operator' => '!=',
+									'value' => '1',
+								],
+							],
+						],
 					],
 				],
 			],
@@ -200,19 +360,6 @@ $fields = [
 						'type' => 'repeater',
 						'sub_fields' => [
 							[
-								'key' => 'field_page_builder_box_img_square',
-								'name' => 'page_builder_box_img_square',
-								'label' => esc_html__('Use square image', 'gt_template'),
-								'display' => 'block',
-								'type' => 'true_false',
-								'ui' => 1,
-								'ui_on_text' => esc_html__('Yes', 'gt_template'),
-								'ui_off_text' => esc_html__('No', 'gt_template'),
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
 								'key' => 'field_page_builder_box_img',
 								'name' => 'page_builder_box_img',
 								'label' => esc_html__('Image', 'gt_template'),
@@ -225,26 +372,6 @@ $fields = [
 										[
 											'field' => 'field_page_builder_box_img_square',
 											'operator' => '!=',
-											'value' => '1',
-										],
-									],
-								],
-								'wrapper' => [
-									'width' => 50,
-								],
-							],
-							[
-								'key' => 'field_page_builder_box_img_square_img',
-								'name' => 'page_builder_box_img_square_img',
-								'label' => esc_html__('Square image', 'gt_template'),
-								'instructions' => esc_html__('Perfekt for contact image', 'gt_template'),
-								'display' => 'block',
-								'type' => 'image',
-								'conditional_logic' => [
-									[
-										[
-											'field' => 'field_page_builder_box_img_square',
-											'operator' => '==',
 											'value' => '1',
 										],
 									],

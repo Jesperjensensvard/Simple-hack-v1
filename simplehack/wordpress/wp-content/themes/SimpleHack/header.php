@@ -16,6 +16,7 @@
 		<link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicons/site.webmanifest">
 		<link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicons/safari-pinned-tab.svg" color="#000000">
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicons/favicon.ico">	
+		<link href="https://fonts.googleapis.com/css?family=Suez+One&display=swap" rel="stylesheet">
 	</head>
 	<body <?php body_class() ?>>
 
@@ -23,7 +24,7 @@
 			$is_page_template_value = 	is_page_template( 'template-page.php' );	
 		?>
 
-	<header class="header">
+	<header class="header" id="main-header">
 		<div class="g-header-special">
 			<div class="main-menu-wrapper clearfix">
 				<div class="logo-container ">
@@ -41,8 +42,25 @@
 						} 
 					?>	
 				</nav>
+				<div class="menu-button-wrapper">
+					<i onclick="myFunction()" class="fas fa-bars menu-button-icon"></i>
+				</div>
+				
 			</div>
-		</div>		
+		</div>
+		<div class="s-second-header">
+			<nav class="second-nav" id="second-men">
+					<?php 
+						if (0 !== $locations1['main_menu']) {
+							wp_nav_menu( array(
+								'theme_location' => 'main_menu',
+								'depth' => 3
+							) );
+						} 
+					?>	
+				</nav>
+			</div>
+		</div>
 	</header>
 
 	<?php 

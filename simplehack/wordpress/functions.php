@@ -6,34 +6,16 @@ require_once('includes/admin-ui.php');
 require_once('includes/plugins.php');
 require_once('includes/special.php');
 /*------------------------------------*\
-    Theme BASIC
+    Theme Support
 \*------------------------------------*/
-// add theme suppport for
-function simple_hack_add_woocommerce_support() {
+function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
-} 
-add_action( 'after_setup_theme', 'simple_hack_add_woocommerce_support' );
-// remove stripe fast pay form singel product page
+}
+
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+// maybe need to add this back in som style things
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-remove_action( 'woocommerce_after_shop_loop_item', 'sp_loop_product_description', 6 );
-add_action( 'woocommerce_after_shop_loop_item', 'ssd_powerpack_add_shortcodes_short_description', 6 );
-
-function ssd_powerpack_add_shortcodes_short_description() {
-    global $product;
-
-    $wc_product = wc_get_product( $product );
-
-    if ( ! $wc_product ) {
-        return false;
-    }
-
-    $short_description = $wc_product->get_short_description();
-
-    if ( '' !== $short_description ) {
-        echo '<div itemprop="description">' . do_shortcode( wpautop( wptexturize( $short_description ) ) ) . '</div>';
-    }    
-}
 
 /*------------------------------------*\
     OPTIONS
@@ -53,7 +35,6 @@ function register_logo_options_page()    {
 			));
 	}
 }
-
 function register_acf_fields ()  {
 
 	if( function_exists('acf_add_local_field_group') ){
@@ -105,6 +86,11 @@ function register_acf_fields ()  {
 		));
 	}
 }
+
+/*------------------------------------*\
+    Menus
+\*------------------------------------*/
+
 /*------------------------------------*\
    Image, Files Support & Sizes
 \*------------------------------------*/
@@ -114,7 +100,7 @@ function cc_mime_types($mimes) {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 }
-// AD COSUTOM IMAGES OPTIONS
+
 if(function_exists('add_image_size')) {
 	//add_image_size('custom_image', 500, 500, true);
 	add_image_size('custom-medium', 700, 400);
@@ -139,7 +125,7 @@ function sanitize_filename_on_upload($filename) {
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
  
-    $parent_style = 'parent-style'; 
+    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
  
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child-style',
@@ -186,7 +172,7 @@ function add_async_attribute($tag, $handle) {
 	return $tag;
 }
 
-add_filter( 'wc_stripe_hide_payment_request_on_product_page', '__return_true' );
+
 
 add_filter('mce_buttons_2', 'tiny_mce_custom_buttons');
 function tiny_mce_custom_buttons($buttons) {
@@ -204,6 +190,25 @@ function tiny_mce_block_formats($in) {
 /*------------------------------------*\
     Reset functions
 \*------------------------------------*/
+
+remove_action( 'woocommerce_after_shop_loop_item', 'sp_loop_product_description', 6 );
+add_action( 'woocommerce_after_shop_loop_item', 'ssd_powerpack_add_shortcodes_short_description', 6 );
+
+function ssd_powerpack_add_shortcodes_short_description() {
+    global $product;
+
+    $wc_product = wc_get_product( $product );
+
+    if ( ! $wc_product ) {
+        return false;
+    }
+
+    $short_description = $wc_product->get_short_description();
+
+    if ( '' !== $short_description ) {
+        echo '<div itemprop="description">' . do_shortcode( wpautop( wptexturize( $short_description ) ) ) . '</div>';
+    }    
+}
 
 // Remove comments in header and footer
 add_action('get_header', 'buffer_start');

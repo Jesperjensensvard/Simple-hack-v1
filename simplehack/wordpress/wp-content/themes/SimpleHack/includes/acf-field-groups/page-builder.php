@@ -252,6 +252,23 @@ $fields = [
 					],
 				],
 			],
+			'field_page_builder_layout_air' => [
+				'key' => 'field_page_builder_air',
+				'name' => 'page_builder_air',
+				'label' => esc_html__('Air', 'gt_template'),
+				'display' => 'block',
+				'sub_fields' => [
+					[
+						'key' => 'field_page_builder_air_sub',
+						'name' => 'page_builder_air_sub',
+						'label' => esc_html__('Add air', 'gt_template'),
+						'type' => 'true_false',
+						'ui' => 1,
+						'ui_on_text' => esc_html__('Yes', 'gt_template'),
+						'ui_off_text' => esc_html__('No', 'gt_template'),
+					],
+				],
+			],
 
 		 	'field_page_builder_layout_small_product' => [
 				'key' => 'field_page_builder_small_product',

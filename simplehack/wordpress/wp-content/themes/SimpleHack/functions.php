@@ -12,10 +12,13 @@ require_once('includes/special.php');
 function simple_hack_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 } 
-add_action( 'after_setup_theme', 'simple_hack_add_woocommerce_support' );
-// remove stripe fast pay form singel product page
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+add_action( 'after_setup_theme', 'simple_hack_add_woocommerce_support' );
+// remove stripe fast pay form singel product page and cart
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+remove_action( 'woocommerce_proceed_to_checkout', array( WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_html' ), 1 );
+remove_action( 'woocommerce_proceed_to_checkout', array( WC_Stripe_Payment_Request::instance(), 'display_payment_request_button_separator_html' ), 2 );
+// may need to be move to after reset after final uplaod.
 remove_action( 'woocommerce_after_shop_loop_item', 'sp_loop_product_description', 6 );
 add_action( 'woocommerce_after_shop_loop_item', 'ssd_powerpack_add_shortcodes_short_description', 6 );
 
@@ -105,6 +108,7 @@ function register_acf_fields ()  {
 		));
 	}
 }
+
 /*------------------------------------*\
    Image, Files Support & Sizes
 \*------------------------------------*/
@@ -114,6 +118,7 @@ function cc_mime_types($mimes) {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 }
+
 // AD COSUTOM IMAGES OPTIONS
 if(function_exists('add_image_size')) {
 	//add_image_size('custom_image', 500, 500, true);

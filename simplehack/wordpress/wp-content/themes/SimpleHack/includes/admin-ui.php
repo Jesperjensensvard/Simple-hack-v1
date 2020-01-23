@@ -1,19 +1,6 @@
 <?php
 
 /*------------------------------------*\
-   Load custom javascript and css in admin
-\*------------------------------------*/
-/* 
-add_action('admin_enqueue_scripts', 'custom_admin_scripts_and_styles');
-function custom_admin_scripts_and_styles() {
-    if(is_admin()) {
-        $admin_js_ver  = date('ymd-Gis', filemtime(get_template_directory().'/assets/js/admin/scripts.min.js'));
-        wp_register_script('admin-script', get_template_directory_uri().'/assets/js/admin'.'/scripts.min.js', array(), $admin_js_ver, true);
-        wp_enqueue_script('admin-script');
-    }
-} */
-
-/*------------------------------------*\
    Login Page & Footer
 \*------------------------------------*/
 
@@ -48,12 +35,6 @@ function custom_admin_footer() {
     Admin Menus & Bar
 \*------------------------------------*/
 
-//add_filter('show_admin_bar', '__return_false');
-
-/*add_action('get_header', 'my_filter_head');
-function my_filter_head() {
-    remove_action('wp_head', '_admin_bar_bump_cb');
-}*/
 
 add_action('admin_menu', 'remove_admin_menus');
 function remove_admin_menus(){

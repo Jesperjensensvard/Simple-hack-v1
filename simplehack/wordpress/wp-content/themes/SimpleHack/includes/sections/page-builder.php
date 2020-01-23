@@ -25,6 +25,12 @@ if(have_rows('page_builder')) {
 		elseif(get_row_layout() == 'builder_small_product'){
 			get_template_part('includes/sections/productdisplay');
 		}
+		elseif(get_row_layout() == 'page_builder_air'){
+			?> 
+		
+			<?php
+			get_template_part('includes/sections/air');
+		}
 		
 	}
 }

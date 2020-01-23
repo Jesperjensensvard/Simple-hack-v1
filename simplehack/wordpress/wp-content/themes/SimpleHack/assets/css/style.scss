@@ -200,6 +200,7 @@ HEADER
 .s-header-special-air{
     background-color: #333333;
     position: relative;
+    margin-bottom: 20px;
     top: 0;
     width: 100%;
     min-height: 120px;
@@ -300,7 +301,7 @@ HERO VIDEO
                 width: 100%;
                 h2 {
                     font-family: 'Suez One', serif;
-                    font-size: 40px;
+                    font-size: 60px;
                     margin-bottom: 20px;
                     color: #ffffff;
                    
@@ -308,7 +309,7 @@ HERO VIDEO
                 p {
                     width: 100%;
                     padding: 10px 30px;
-                    font-size: 18px;
+                    font-size: 30px;
                     font-family: 'Suez One', serif;
                 }
             }
@@ -348,11 +349,12 @@ HERO VIDEO
                     padding-bottom: 40px;
                     width: 100%;
                     h2 {
-                        font-size: 32px;     
+                        font-size: 50px;     
                     }
                     p {
                         width: 100%;
                         padding: 10px 30px;
+                        font-size: 24px;
                     }
                 }
                 .this-btn {
@@ -378,6 +380,26 @@ HERO VIDEO
             object-fit: fill;
             height: 600px;
         }
+    }
+}
+@media screen and (max-width: 400px) {
+    .s-vide-conatiner {
+       
+        .video-make-relative{
+         
+            .center-text-and-button {
+                
+                .wisivyg {
+                  
+                    h2 {
+                        font-size: 40px;     
+                    }
+                    p { 
+                        font-size: 20px;
+                    }
+                }
+            }
+        }   
     }
 }
 
@@ -423,9 +445,13 @@ HERO SIMPLE FULL SCREEN
                 h2{
                     font-family: 'Suez One', serif;
                     color: #ffffff;
+                    font-size: 60px;
+                    margin-bottom: 15px;
                 }
                 p {
+                    margin-bottom: 15px;
                     padding: 20px 30px;
+                    font-size: 30px;
                 }
             }
             a{
@@ -434,6 +460,7 @@ HERO SIMPLE FULL SCREEN
                 text-decoration: none;
                 border: 1px solid #ffffff;
                 padding: 10px 30px ;
+                background-color: #000000;;
             }
             a:hover{
                 color: #000000;
@@ -520,12 +547,14 @@ HERO-SIMPLE
   .text-buttunon-handler,
   .image-responsify{
       z-index: 999;
+      .wysiwyg {
+        h1,h2,h3,h4,h5,h6{
+            color: #ffffff;
+        }
+        margin-bottom: 40px;
+      }
   }
 
-  .wysiwyg {
-    color: #fff;
-    margin-bottom: 40px;
-  }
 
   .text-buttunon-handler {
     position: absolute;
@@ -715,6 +744,22 @@ BOX
 }
 
 /* ==============================================================
+AIR MASTER PADDING
+================================================================*/
+
+.master-air-padd-not-store{
+    background-color: #333333;
+    position: relative;
+    min-height: 110PX;
+    width: 100%;
+}
+.master-air-padd{
+    position: relative;
+    min-height: 110PX;
+    width: 100%;
+}
+
+/* ==============================================================
 WYSIWYG
 ================================================================*/
 .wysiwyg {
@@ -753,6 +798,28 @@ WYSIWYG
 	a {
 		font-weight: bold;
 		letter-spacing: 1px;
+    }
+}
+
+@include media-max(400px) {
+	.wysiwyg {
+        h1 {font-size: 30px;}
+        h2 {font-size: 30px;}
+        h3 {font-size: 30px;}
+        h4 {font-size: 30px; margin: 0;}
+        h5 {font-size: 24px; margin: 0;}
+        h6 {font-size: 18px; margin: 0;}
+    
+        p {
+            font-size: 18px;
+            margin: 0 0 20px 0;
+        }
+    
+        p.large {
+            font-size: 20px;
+            margin: 0 0 20px 0;
+         
+        }
     }
 }
 
@@ -1051,8 +1118,15 @@ PRODUCT DISPLAY OVERWRTIE MODULE
     }
 }
 
+    
+
 @include media-max(800px) {
     .s-product{
+        .title-of-simple-product{
+          h3{
+              font-size: 30px;
+          }
+        }
         .recent-sale{
             .products {
                 li{
@@ -1074,6 +1148,84 @@ PRODUCT DISPLAY OVERWRTIE MODULE
 }
 
 /* ==============================================================
+SOPPING PAGE 
+================================================================*/
+
+
+      .products{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        li{
+            
+            align-self: stretch;
+            border: 1px solid black;
+            div{
+                padding:  0 15px;
+            }
+            .add_to_cart_button {
+                background: #ec2028;
+                color: #ffffff;
+                border: 1px solid #ec2028;
+            }
+        }
+    }
+ 
+/* ==============================================================
+END STOR PAGE
+================================================================*/
+.woocommerce-thankyou-order-received{
+    color: #00b300;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bolder;
+}
+.download-file{
+    a{
+        background: #ec2028;
+        color: #ffffff;
+        border: 1px solid #ec2028;
+    }
+}
+.woocommerce-order-downloads__title,.woocommerce-column__title,.woocommerce-order-details__title{
+    color: #000000;
+    font-weight: bolder;
+}
+address{
+    color: #000000;
+    font-weight: bolder;
+}
+.order-again{
+    a{
+        background: #ec2028;
+        color: #ffffff;
+        border: 1px solid #ec2028;
+    }
+}
+@include media-max(800px) {
+    .woocommerce-thankyou-order-received{
+        font-size: 30px;
+    }
+}
+@include media-max(400px) {
+    .woocommerce-thankyou-order-received{
+        font-size: 24px;
+    }
+}
+/* ==============================================================
+CART PAGE
+================================================================*/
+.return-to-shop{
+    a{
+        background: #ec2028;
+        color: #ffffff;
+        border: 1px solid #ec2028;
+    }
+}
+
+
+
+/* ==============================================================
 404 PAGE
 ================================================================*/
 
@@ -1084,6 +1236,14 @@ PRODUCT DISPLAY OVERWRTIE MODULE
     .wysiwyg {
        margin-top: 40px;
     }
+}
+
+.retun-home-404{
+    background: #ec2028;
+    color: #ffffff;
+    border: 1px solid #ec2028;
+    border-radius: 5px;
+    padding: 8px 10px;
 }
 
 /* ==============================================================
